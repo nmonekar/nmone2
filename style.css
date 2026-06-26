@@ -671,3 +671,51 @@ body {
     }
 
 }
+/* GPU Optimization */
+
+img,
+svg,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+.hero-image,
+.main-hero-img,
+.floating-badge,
+.card,
+.service-card {
+    transform: translateZ(0);
+    will-change: transform;
+}
+
+/* Mobile Performance */
+
+@media (max-width:768px){
+
+    *{
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    .hero-bg-glow,
+    .floating-badge,
+    .badge-1,
+    .badge-2,
+    .badge-ring{
+        animation:none !important;
+    }
+
+    .main-header{
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+
+}
+html{
+    text-rendering:optimizeSpeed;
+}
+
+body{
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+}
